@@ -14,6 +14,8 @@ A simple web application for managing your TODO list. Keep track of your tasks, 
 ## About
 
 The TODOs List web app is a handy tool for managing your tasks. It provides features like adding, editing, and deleting tasks, setting task priorities, and sorting tasks by priority or status (pending/completed). Additionally, you can view task descriptions for more details.
+![home](https://github.com/Dheerajk99/Todo_list/assets/104593008/7f8ab94d-7b48-4dad-977e-2221c7413521)
+
 
 ## Features
 
@@ -24,6 +26,10 @@ The TODOs List web app is a handy tool for managing your tasks. It provides feat
 - View task descriptions.
 - Responsive design for various screen sizes.
 - User-friendly interface.
+
+![Uploading list.png…]()
+![mark](https://github.com/Dheerajk99/Todo_list/assets/104593008/535315d3-2d3e-44d4-8bdb-a7d3a63e7901)
+
 
 ##  Usage
 
@@ -38,6 +44,9 @@ The TODOs List web app is a handy tool for managing your tasks. It provides feat
 - Click the "Save Task" button to add a new task or edit an existing one.
 - To edit a task, click the "Edit" button next to a task in the list.
 
+ ![add or edit](https://github.com/Dheerajk99/Todo_list/assets/104593008/87dd3fb8-2943-4f3c-844b-7cf95a28a965)
+
+
 ## How to sort tasks
 
 - Use the "Sort" dropdown menu to select sorting options.
@@ -47,3 +56,6 @@ The TODOs List web app is a handy tool for managing your tasks. It provides feat
 
 - To delete a task, click the "Trash" button next to a task in the list.
 - To clear all tasks, click the "Clear All Tasks" button and confirm.
+
+  
+![delete](https://github.com/Dheerajk99/Todo_list/assets/104593008/1608459d-1574-481d-b795-c6a4bd5f0cfe)
