@@ -1,13 +1,5 @@
 # TODOs List Web App
 
-![TODOs List](![Screenshot (39)](https://github.com/Dheerajk99/Todo_list/assets/104593008/efd3fc7f-ed35-4392-914c-3869632262a7)
-![Screenshot (38)](https://github.com/Dheerajk99/Todo_list/assets/104593008/b6d8f5ed-755f-4466-b7ec-5acdf5de4546)
-![Screenshot (37)](https://github.com/Dheerajk99/Todo_list/assets/104593008/638d58ca-4f1f-4e1c-bbef-0df06efdce95)
-![Screenshot (36)](https://github.com/Dheerajk99/Todo_list/assets/104593008/098c6a9d-a661-4af2-86d7-947086cff849)
-![Screenshot (35)](https://github.com/Dheerajk99/Todo_list/assets/104593008/1a34bda3-e3bb-4054-a6e4-3ae0cbe6dff0)
-![Screenshot (34)](https://github.com/Dheerajk99/Todo_list/assets/104593008/7cd98b1c-3121-4134-af4e-6f88f4f681ee)
-)
-
 A simple web application for managing your TODO list. Keep track of your tasks, set priorities, mark tasks as completed, and more!
 
 ## Table of Contents
