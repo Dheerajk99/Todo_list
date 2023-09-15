@@ -31,14 +31,14 @@ The TODOs List web app is a handy tool for managing your tasks. It provides feat
 - Use the dropdown menu to sort tasks by priority or status.
 - Click the "Clear All Tasks" button to delete all tasks.
 
-## How to add or edit tasks
+## How to add or edit task
 
 - Click the "Add Item" button to open the task form.
 - Enter a task title, description (optional), and select a priority.
 - Click the "Save Task" button to add a new task or edit an existing one.
 - To edit a task, click the "Edit" button next to a task in the list.
 
-## How to sort task
+## How to sort tasks
 
 - Use the "Sort" dropdown menu to select sorting options.
 - Sort tasks by priority (Low, Medium, High) or by status (Pending, Completed).
