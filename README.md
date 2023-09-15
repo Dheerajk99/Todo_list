@@ -8,7 +8,7 @@ A simple web application for managing your TODO list. Keep track of your tasks, 
 - [Features](#features)
 - [Usage](#usage)
 - [How to add or edit task](#how-to-add-or-edit-task)
-- [How to Sort Tasks](#how-to-sort-tasks)
+- [How to sort Tasks](#how-to-sort-tasks)
 - [Deleting Tasks](#deleting-tasks)
 
 ## About
