@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOs List</title>
+
+    <!-- Add FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">TODOs List</a>
+
+    </nav>
+
+
+    <div class="container my-4">
+
+        <!-- Button to add items to the TODO list -->
+        <div class="d-flex align-items-center">
+            <button id="addItemButton" class="btn btn-success"><i class="fas fa-plus"></i> Add Item</button>
+
+            <div class="dropdown" style="display: inline-block; margin-left: 10px;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Sort
+                </button>
+                <div class="dropdown-menu" aria-labelledby="sortDropdown">
+                    <h6>Priority</h6>
+                    <a class="dropdown-item" href="#" onclick="sortTasks('priority-low')">Low</a>
+                    <a class="dropdown-item" href="#" onclick="sortTasks('priority-medium')">Medium</a>
+                    <a class="dropdown-item" href="#" onclick="sortTasks('priority-high')">High</a>
+                    <div class="dropdown-divider"></div>
+                    <h6>Status</h6>
+                    <a class="dropdown-item" href="#" onclick="sortTasks('status-pending')">Pending</a>
+                    <a class="dropdown-item" href="#" onclick="sortTasks('status-completed')">Completed</a>
+                </div>
+            </div>
+
+            <!-- Clear All Tasks Button -->
+            <div class="text-center my-4 ml-2">
+                <button id="clearAllTasksButton" class="btn btn-danger">Clear All Tasks</button>
+            </div>
+        </div>
+
+        <!-- Popup for Clearing Tasks -->
+        <div id="clearTasksPopup" class="custom-edit-popup">
+            <h3>Clear All Tasks</h3>
+            <p>Are you sure you want to clear all tasks?</p>
+            <button id="confirmClearButton" class="btn btn-danger">Clear All</button>
+            <button id="cancelClearButton" class="btn btn-secondary">Cancel</button>
+        </div>
+
+
+
+        <!-- Task List -->
+        <div id="taskList" class="my-4">
+            <h2>Your Tasks</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">SNo</th>
+                            <th scope="col">Item Title</th>
+                            <th scope="col">Priority</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Actions</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            <p id="emptyMessage" class="text-center"></p>
+        </div>
+
+        <!-- Rectangular Popup to Display Tasks -->
+        <div id="tasksPopup" class="custom-edit-popup">
+            <h3>Your Tasks</h3>
+            <pre id="tasksText"></pre>
+            <button id="closeTasksPopup" class="btn btn-secondary"><i class="fas fa-times"></i> Close</button>
+        </div>
+
+        <!-- Form to add/edit a task -->
+        <div id="taskFormPopup" class="custom-edit-popup">
+            <h3>Add/Edit Task</h3>
+            <form id="taskForm">
+                <input type="hidden" id="editIndex" value="-1">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select class="form-control" id="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Task</button>
+                <button id="cancelTaskButton" class="btn btn-secondary"><i class="fas fa-times"></i> Cancel</button>
+            </form>
+        </div>
+
+        <!-- Popup for deleting tasks -->
+        <div id="deletePopup" class="delete-popup">
+            <h3>Delete Task</h3>
+            <p>Are you sure you want to delete this task?</p>
+            <button id="confirmDeleteButton" class="btn btn-danger">Delete</button>
+            <button id="cancelDeleteButton" class="btn btn-secondary">Cancel</button>
+        </div>
+        
+        <!-- Rectangular Popup to Display Task Description -->
+        <div id="descriptionPopup" class="custom-edit-popup">
+            <h3>Task Description</h3>
+            <pre id="descriptionText"></pre>
+            <button id="closeDescriptionPopup" class="btn btn-secondary" onclick="closeDescriptionPopup()">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+
+
+    </div>
+
+
+    <!-- Bootstrap and JavaScript libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- Add FontAwesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
