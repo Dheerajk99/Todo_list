@@ -14,6 +14,7 @@ A simple web application for managing your TODO list. Keep track of your tasks, 
 ## About
 
 The TODOs List web app is a handy tool for managing your tasks. It provides features like adding, editing, and deleting tasks, setting task priorities, and sorting tasks by priority or status (pending/completed). Additionally, you can view task descriptions for more details.
+
 ![home](https://github.com/Dheerajk99/Todo_list/assets/104593008/7f8ab94d-7b48-4dad-977e-2221c7413521)
 
 
@@ -27,7 +28,6 @@ The TODOs List web app is a handy tool for managing your tasks. It provides feat
 - Responsive design for various screen sizes.
 - User-friendly interface.
 
-![Uploading list.png…]()
 ![mark](https://github.com/Dheerajk99/Todo_list/assets/104593008/535315d3-2d3e-44d4-8bdb-a7d3a63e7901)
 
 
